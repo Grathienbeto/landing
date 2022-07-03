@@ -1,0 +1,266 @@
+/*
+The navbar should always be at the top of the viewport
+Your product landing page should have at least one media query
+Your product landing page should utilize CSS flexbox at least once
+  */
+
+:root {
+    --ff-primary: 'Montserrat', sans-serif;
+    --color-background: rgb(240, 251, 252);
+    --color-medium: rgb(207,238,246);
+    --color-strong: rgb(50,203,159);
+    --color-text: rgb(28,47,52);
+    --color-contrast: rgb(254,195,28);
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: var(--ff-primary);
+}
+
+
+/************** NAV BAR ****************/
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    margin-bottom: 2em;
+}
+
+#header-img {
+    width: 30px;
+    height: 30px;
+}
+
+#nav-bar {
+    align-items: center;
+    background-color: var(--color-medium);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    position: fixed;
+    width: 100%;
+}
+
+.link-div {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+#nav-bar div a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+#nav-bar div a:visited {
+    color: var(--color-text);
+}
+
+/*************** MAIN ********************/
+
+main {
+    margin: 5em auto 0;
+    height: 100vh;
+    width: 100%;
+}
+
+#about {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.5em;
+    justify-content: space-evenly;
+    margin: 2em auto 0;
+    width: 90%;
+}
+
+.about__text {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    margin-top: 8em;
+    max-width: 35%;
+}
+
+.about__text p {
+    font-size: 1.25rem;
+    line-height: 2;
+    margin-top: 2rem;
+}
+
+.hero-img {
+    height: auto;
+    max-width: 100%;
+}
+
+@media all and (max-width: 1300px) {
+    .about__text {
+        font-size: 0.9rem;
+        margin-top: 1em;
+        max-width: 45%;
+    }
+    
+    .about__text p {
+        line-height: 1.5;
+    }
+} 
+
+@media all and (max-width: 900px) {
+    #about {
+        flex-flow: row wrap;
+        justify-content: baseline;
+    }
+
+    .about__text {
+        max-width: 100%;
+        margin-top: 1em;
+        margin-left: 0.5em;
+    }
+}
+
+/*************** FEATURES *****************/
+
+.features__heading {
+    color: var(--color-text);
+    font-size: 2rem;
+    margin: 3.5em auto 0;
+    max-width: 90%;
+    text-align: center;
+}
+
+.features__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 4em auto;
+    max-width: 80%;
+}
+
+.features__container div {
+    max-width: 30%;
+}
+
+.features__container p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.features__container img {
+    display: block;
+    margin: 3em auto;
+}
+
+@media all and (max-width: 1300px) {
+    .features__container {
+        max-width: 90%;
+    }
+    .features__container div {
+        max-width: 33%;
+    }
+    .features__container p {
+        max-width: 80%;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .features__heading {
+        text-align: left;
+    }
+
+    .features__container {
+        flex-flow: column wrap;
+        justify-content: center;
+        margin-top: 4em;
+    }
+
+    .features__container div {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .features__container img {
+        display: block;
+        margin: 3em auto 1em;
+    }
+
+    .features__container p {
+        max-width: 100%;
+    }
+}
+
+/**************** PRICES ******************/
+
+.prices {
+    margin-top: 10em;
+    max-width: 90%;
+}
+
+.prices__container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.prices__container > div{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.prices__tier {
+    color: var(--color-text);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.prices__tier > div {
+    margin-top: 3em;
+    max-width: 50%;
+}
+
+.prices__heading {
+    font-size: 1.5rem;
+}
+
+.prices__text{
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-top: 0.5em;
+}
+
+.prices__img {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 75%;
+}
+
+@media all and (max-width: 1300px){
+    .prices__text {
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .prices__tier {
+        flex-flow: column wrap;
+    }
+
+    .inverted {
+        flex-direction: column-reverse;
+    }
+
+    .prices__tier > div {
+        max-width: 100%;
+    }
+}
+
+/**************** CONTACT *****************/
